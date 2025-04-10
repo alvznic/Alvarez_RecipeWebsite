@@ -7,4 +7,3 @@ Features
 - Click on food pictures to see recipes.
 - Pop-up windows show ingredients and cooking steps.
 - Red color for main dishes, pink color for desserts.
-- Works without internet connection after loading.
