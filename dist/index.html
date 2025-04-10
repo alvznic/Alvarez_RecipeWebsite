@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alva's Taste Trails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <!--Navbar-->
+    <nav class="bg-red-700 text-white p-4 shadow-md fixed w-full z-50">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between"
+      >
+        <div
+          class="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0"
+        >
+          <h1 class="text-2xl font-bold">Alva's Taste Trails</h1>
+          <button id="menuToggle" class="md:hidden text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul
+          id="mobileMenu"
+          class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-6 text-lg font-semibold w-full md:w-auto"
+        >
+          <li>
+            <a href="#home" class="block hover:underline py-1 nav-link">Home</a>
+          </li>
+          <li>
+            <a href="#dishes" class="block hover:underline py-1 nav-link"
+              >Dishes</a
+            >
+          </li>
+          <li>
+            <a href="#desserts" class="block hover:underline py-1 nav-link"
+              >Desserts</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="block hover:underline py-1 nav-link"
+              >About</a
+            >
+          </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--space for navbar-->
+    <div class="h-16 md:h-20"></div>
+
+    <!--Hero section-->
+    <section
+      id="home"
+      class="bg-white py-10 md:py-16 text-center px-4 md:px-6 pt-16"
+    >
+      <div class="container mx-auto">
+        <img
+          src="Filipino dish.png"
+          alt="Featured Dish"
+          class="mx-auto w-full max-w-3xl rounded-lg shadow-lg mb-6 object-cover h-48 md:h-64"
+        />
+        <h2 class="text-3xl md:text-4xl font-bold text-red-700">
+          Savor the Flavor
+        </h2>
+        <p class="text-gray-700 mt-4 text-base md:text-lg max-w-2xl mx-auto">
+          Explore the vibrant and delicious world of Filipino dishes. Click below to discover each flavorful recipe.
+        </p>
+        <button
+          id="exploreRecipesBtn"
+          class="mt-6 bg-red-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-red-800 transition-all"
+        >
+          Explore Recipes
+        </button>
+      </div>
+    </section>
+
+    <!--dish-->
+    <section
+      id="dishes"
+      class="container mx-auto px-4 py-8 md:py-12 scroll-mt-20"
+    >
+      <h2
+        class="text-2xl md:text-3xl font-bold text-red-700 mb-6 md:mb-8 text-center"
+      >
+        Dishes
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+      >
+        <!--recipe card-->
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          onclick="showRecipe('tosilog')"
+        >
+          <img
+            src="tosilog.png"
+            alt="Tosilog"
+            class="w-full h-40 md:h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg md:text-xl font-bold text-center text-red-700">
+              Tosilog
+            </h3>
+            <p class="text-gray-600 text-center mt-2 text-sm md:text-base">
+              A classic Filipino breakfast combo of sweet glazed pork tocino,
+              garlicky fried rice, and a sunny-side-up egg, perfect harmony of
+              sweet, savory, and satisfying.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          onclick="showRecipe('karekare')"
+        >
+          <img
+            src="kare kare.png"
+            alt="Kare-Kare"
+            class="w-full h-40 md:h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg md:text-xl font-bold text-center text-red-700">
+              Kare-Kare
+            </h3>
+            <p class="text-gray-600 text-center mt-2 text-sm md:text-base">
+              A savory peanut-based stew with tender meat and crisp vegetables,
+              best enjoyed with bagoong on the side.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          onclick="showRecipe('kawali')"
+        >
+          <img
+            src="kawali.png"
+            alt="Lechon kawali"
+            class="w-full h-40 md:h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg md:text-xl font-bold text-center text-red-700">
+              Lechon Kawali
+            </h3>
+            <p class="text-gray-600 text-center mt-2 text-sm md:text-base">
+              Crispy pan-fried pork belly with juicy meat and golden crackling
+              skin, served best with a tangy dipping sauce.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--dessert-->
+    <section
+      id="desserts"
+      class="container mx-auto px-4 py-8 md:py-12 bg-pink-50 scroll-mt-20"
+    >
+      <h2
+        class="text-2xl md:text-3xl font-bold text-pink-700 mb-6 md:mb-8 text-center"
+      >
+        Desserts
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+      >
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          onclick="showRecipe('HaloHalo')"
+        >
+          <img
+            src="halo halo.png"
+            alt="Halo-Halo"
+            class="w-full h-40 md:h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg md:text-xl font-bold text-center text-pink-700">
+              Halo-Halo
+            </h3>
+            <p class="text-gray-600 text-center mt-2 text-sm md:text-base">
+              A vibrant Filipino dessert of crushed ice, evaporated milk, and a
+              colorful mix of sweetened fruits, jellies, and beans, topped with
+              leche flan and ube.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          onclick="showRecipe('mangoFloat')"
+        >
+          <img
+            src="float.png"
+            alt="Mango Float"
+            class="w-full h-40 md:h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg md:text-xl font-bold text-center text-red-700">
+              Mango Float
+            </h3>
+            <p class="text-gray-600 text-center mt-2 text-sm md:text-base">
+              A delicious no-bake dessert made with layers of graham crackers,
+              creamy condensed milk mixture, and sweet ripe mangoes, chilled to
+              perfection.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          onclick="showRecipe('ubeHalaya')"
+        >
+          <img
+            src="ube.png"
+            alt="Ube Halaya"
+            class="w-full h-40 md:h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg md:text-xl font-bold text-center text-pink-700">
+              Ube Halaya
+            </h3>
+            <p class="text-gray-600 text-center mt-2 text-sm md:text-base">
+              A rich and creamy Filipino delicacy made from boiled purple yams,
+              sugar, and coconut milk, often enjoyed as a spread or dessert
+              topping.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--about-->
+    <section
+      id="about"
+      class="container mx-auto px-4 py-8 md:py-12 bg-white scroll-mt-20"
+    >
+      <h2
+        class="text-2xl md:text-3xl font-bold text-red-700 mb-6 md:mb-8 text-center"
+      >
+        About Us
+      </h2>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-gray-700 mb-4 text-sm md:text-base">
+          Alva's Taste Trails is dedicated to preserving and sharing authentic
+          Filipino cuisine. Our recipes have been passed down through
+          generations, capturing the essence of traditional Filipino flavors
+          while adapting to modern cooking techniques.
+        </p>
+        <p class="text-gray-700 mb-4 text-sm md:text-base">
+          Each recipe has been carefully tested and perfected in our kitchen to
+          ensure you can recreate these delicious dishes at home, no matter
+          where you are in the world.
+        </p>
+      </div>
+    </section>
+
+    <!--recipe modal-->
+    <div
+      id="recipeModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 px-4 py-6 overflow-y-auto"
+    >
+      <div
+        class="bg-white p-4 md:p-6 rounded-lg shadow-xl w-full max-w-lg relative my-4"
+      >
+        <button
+          onclick="closeRecipe()"
+          class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-2xl"
+        >
+          &times;
+        </button>
+        <h3
+          id="recipeTitle"
+          class="text-xl md:text-2xl font-bold mb-4 text-center text-red-700 pr-6"
+        ></h3>
+        <h4 class="text-base md:text-lg font-semibold mb-2">Ingredients:</h4>
+        <ul
+          id="recipeIngredients"
+          class="list-disc list-inside text-gray-700 mb-4 text-sm md:text-base"
+        ></ul>
+        <h4 class="text-base md:text-lg font-semibold mb-2">Instructions:</h4>
+        <p
+          id="recipeContent"
+          class="text-gray-700 whitespace-pre-line text-sm md:text-base"
+        ></p>
+      </div>
+    </div>
+
+    <!--footer-->
+    <footer class="bg-red-700 text-white mt-auto py-4 px-4 text-xs md:text-sm">
+      <div
+        class="flex flex-col md:flex-row justify-center items-center gap-2 flex-wrap text-center"
+      >
+        <span
+          >&copy; 2025 <strong>Alva's Taste Trails</strong>. All rights
+          reserved.</span
+        >
+        <span class="hidden md:inline">|</span>
+        <span
+          >Contact:
+          <a
+            href="mailto:alva@example.com"
+            class="underline hover:text-gray-200"
+            >alva@gmail.com</a
+          ></span
+        >
+        <span class="hidden md:inline">|</span>
+        <span
+          >Follow us:
+          <a href="#" class="underline hover:text-gray-200 ml-1">Facebook</a>,
+          <a href="#" class="underline hover:text-gray-200 ml-1">Instagram</a>,
+          <a href="#" class="underline hover:text-gray-200 ml-1">YouTube</a>
+        </span>
+      </div>
+    </footer>
+
+    <!--js code-->
+    <script>
+      const recipes = {
+        tosilog: {
+          ingredients: [
+            "½ kg pork tocino (store-bought or homemade)",
+            "12 cups cooked garlic fried rice",
+            "2 large eggs",
+            "2 tablespoons cooking oil",
+            "Pickled papaya (atchara) - optional",
+            "Salt and pepper to taste",
+          ],
+          instructions:
+            "1. Cook tocino in a pan over medium heat with a little water until tender, then let it fry in its own caramelized sauce.\n" +
+            "2. In another pan, fry eggs sunny side up.\n" +
+            "3. Plate garlic rice, tocino, and egg together. Serve hot with pickled papaya on the side if desired.\n" +
+            "4. Serve with rice.",
+        },
+        karekare: {
+          ingredients: [
+            "1 kg oxtail or beef tripe",
+            "Vegetables: eggplants, string beans, banana heart, pechay",
+            "1 cup peanut butter",
+            "Ground toasted rice (½ cup)",
+            "Annatto seeds soaked in water",
+            "Onion and garlic",
+            "Salt or fish sauce",
+            "Shrimp paste (bagoong) for serving",
+          ],
+          instructions:
+            "1. Boil the meat until tender.\n" +
+            "2. Sauté garlic and onion, add annatto water for color.\n" +
+            "3. Add boiled meat, peanut butter, and ground rice. Simmer until thick.\n" +
+            "4. Add vegetables and cook until just tender.\n" +
+            "5. Serve with bagoong on the side.",
+        },
+        kawali: {
+          ingredients: [
+            "1 kg pork belly",
+            "1 tablespoon peppercorns",
+            "4 bay leaves",
+            "Salt to taste",
+            "Water for boiling",
+            "Cooking oil for deep-frying",
+          ],
+          instructions:
+            "1. Boil pork belly in water with salt, peppercorns, and bay leaves until tender (about 45 minutes).\n" +
+            "2. Let it cool, then pat dry completely.\n" +
+            "3. Deep-fry in hot oil until golden and crispy. Be careful it may splatter\n" +
+            "4. Slice and serve with liver sauce or vinegar-soy dipping sauce.",
+        },
+        HaloHalo: {
+          ingredients: [
+            "Crushed ice",
+            "Evaporated milk",
+            "Sweetened banana (saba)",
+            "Sweetened jackfruit (langka)",
+            "Red and green gulaman (jelly)",
+            "Sweetened beans (red mung, garbanzos)",
+            "Ube halaya (purple yam jam)",
+            "Leche flan",
+            "Pinipig (pounded rice flakes)",
+            "Ice cream (ube or mango)",
+          ],
+          instructions:
+            "1. In a tall glass, layer the sweetened fruits, jellies, and beans.\n" +
+            "2. Add a generous amount of crushed ice on top.\n" +
+            "3. Pour evaporated milk over the ice.\n" +
+            "4. Top with ube halaya, leche flan, and a scoop of ice cream.\n" +
+            "5. Sprinkle pinipig on top and serve with a long spoon.",
+        },
+        mangoFloat: {
+          ingredients: [
+            "1 pack graham crackers",
+            "1 can (300ml) condensed milk",
+            "1 can (250ml) all-purpose cream",
+            "3 ripe mangoes, peeled and sliced",
+            "1/4 cup sugar (optional)",
+          ],
+          instructions:
+            "1. Mix condensed milk, all-purpose cream, and sugar in a bowl.\n" +
+            "2. In a dish, layer graham crackers, then spread a generous amount of cream mixture over it.\n" +
+            "3. Add a layer of mango slices, then repeat the layers.\n" +
+            "4. Finish with cream on top and refrigerate for 4-6 hours or overnight.\n" +
+            "5. Serve chilled and enjoy the refreshing taste of Mango Float.",
+        },
+        ubeHalaya: {
+          ingredients: [
+            "1 kg purple yam (ube), boiled and mashed",
+            "1 can (300ml) condensed milk",
+            "1 can (250ml) evaporated milk",
+            "1/2 cup butter",
+            "1 tsp vanilla extract",
+            "1/4 cup sugar (optional)",
+          ],
+          instructions:
+            "1. In a pan, melt butter over medium heat.\n" +
+            "2. Add the mashed ube and stir for 5 minutes.\n" +
+            "3. Add condensed milk, evaporated milk, sugar, and vanilla. Stir constantly.\n" +
+            "4. Cook for 20-30 minutes until the mixture thickens and becomes smooth.\n" +
+            "5. Transfer to a container and let it cool to room temperature before serving.",
+        },
+      };
+
+      function showRecipe(dish) {
+        const data = recipes[dish];
+        document.getElementById("recipeTitle").innerText =
+          dish[0].toUpperCase() + dish.slice(1);
+        const ingredientsList = document.getElementById("recipeIngredients");
+        ingredientsList.innerHTML = "";
+        data.ingredients.forEach((ing) => {
+          const li = document.createElement("li");
+          li.innerText = ing;
+          ingredientsList.appendChild(li);
+        });
+        document.getElementById("recipeContent").innerText = data.instructions;
+        document.getElementById("recipeModal").classList.remove("hidden");
+        document.getElementById("recipeModal").classList.add("flex");
+        document.body.style.overflow = "hidden"; //don't scroll if modal is open
+      }
+
+      function closeRecipe() {
+        document.getElementById("recipeModal").classList.add("hidden");
+        document.getElementById("recipeModal").classList.remove("flex");
+        document.body.style.overflow = "auto"; //restore scroll
+      }
+
+      //menu
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobileMenu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      //close modal
+      document
+        .getElementById("recipeModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeRecipe();
+          }
+        });
+
+      //window resize for menu
+      window.addEventListener("resize", function () {
+        if (window.innerWidth >= 768) {
+          //md breakpoint
+          document.getElementById("mobileMenu").classList.remove("hidden");
+        } else {
+          document.getElementById("mobileMenu").classList.add("hidden");
+        }
+      });
+
+      //to initialize menu state on page load
+      window.addEventListener("load", function () {
+        if (window.innerWidth >= 768) {
+          document.getElementById("mobileMenu").classList.remove("hidden");
+        }
+      });
+
+      //scroll for navbar links
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          // close menu if open
+          if (window.innerWidth < 768) {
+            document.getElementById("mobileMenu").classList.add("hidden");
+          }
+
+          const targetId = link.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      //recipes scroll
+      document
+        .getElementById("exploreRecipesBtn")
+        .addEventListener("click", () => {
+          document.querySelector("#dishes").scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+    </script>
+  </body>
+</html>
