@@ -1,5 +1,5 @@
 Alva's Taste Trails
-A website about Filipino food recipes that works on phones and computers.
+- A website about Filipino food recipes that works on phones and computers.
 
 Features
 - Easy to use on phones and computers.
